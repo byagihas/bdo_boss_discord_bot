@@ -13,12 +13,6 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content == '!boss') {
-        /* Screenshot pseudocode
-        screenshot().then(() => {
-            fs.readFileSync(__dirname + '/screenshots/testscreenshot.png', (data) => {
-                    msg.channel.send(data);
-            });
-        }); */
         getScreenshot('https://bdobosstimer.com/?&server=na').then(() => {
             const attachment = new MessageAttachment('./screenshots/boss.png');
             // Send the attachment in the message channel with a content
@@ -28,4 +22,3 @@ client.on('message', message => {
 });
 
 client.login(token);
-
